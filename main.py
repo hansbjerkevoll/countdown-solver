@@ -12,8 +12,7 @@ def match_words(word1, word2):
     return True
 
 
-def main():
-
+if __name__ == "__main__":
     input_letters = input("Input letters: ")
     print()
     output_length = len(input_letters)
@@ -34,14 +33,10 @@ def main():
             if len(matching_words) != 0:
                 print(matching_words)
             print()
-            if len(word) < 5 and len(matching_words) != 0:
+            if len(word) < 6 and len(matching_words) != 0:
                 break
             matching_words.clear()
-            output_length -= 1
+            output_length = len(word)
 
         if match_words(word, input_letters) and (word not in matching_words):
             matching_words.append(word)
-
-
-if __name__ == "__main__":
-    main()
